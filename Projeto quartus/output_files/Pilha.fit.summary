@@ -1,13 +1,13 @@
-Fitter Status : Successful - Sun Dec  3 16:38:00 2023
+Fitter Status : Successful - Sun Dec  3 17:53:17 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Pilha
 Top-level Entity Name : Barramento
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 1 / 56,480 ( < 1 % )
+Logic utilization (in ALMs) : 51 / 56,480 ( < 1 % )
 Total registers : 0
-Total pins : 54 / 268 ( 20 % )
+Total pins : 61 / 268 ( 23 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )
