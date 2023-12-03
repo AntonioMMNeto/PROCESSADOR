@@ -1,0 +1,74 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(symbol
+	(rect 144 104 496 216)
+	(text "Pilha" (rect 5 0 28 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Endereco[(Largura_da_pilha-1)..0]" (rect 0 0 165 12)(font "Arial" ))
+		(text "Endereco[(Largura_da_pilha-1)..0]" (rect 21 27 186 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "io" (rect 0 0 8 12)(font "Arial" ))
+		(text "io" (rect 21 59 29 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 352 32)
+		(bidir)
+		(text "Data[(Largura_da_pilha-1)..0]" (rect 0 0 142 12)(font "Arial" ))
+		(text "Data[(Largura_da_pilha-1)..0]" (rect 215 27 357 39)(font "Arial" ))
+		(line (pt 352 32)(pt 336 32)(line_width 3))
+	)
+	(parameter
+		"Largura_da_pilha"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Tamanho_da_pilha"
+		"64"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Tamanho_endereco"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 336 96))
+	)
+	(annotation_block (parameter)(rect 496 24 720 104))
+)

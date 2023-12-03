@@ -1,0 +1,8 @@
+module Barramento(io_0,io_1,io_2,io_3,io_4,io_5,ctrl_0,ctrl_1,ctrl_2,ctrl_3,ctrl_4,ctrl_5);
+
+parameter Largura_barramento=8;
+
+inout wire [Largura_barramento-1:0]io_0,io_1,io_2,io_3,io_4,io_5;
+input wire ctrl_0,ctrl_1,ctrl_2,ctrl_3,ctrl_4,ctrl_5;
+
+endmodule
