@@ -1,5 +1,5 @@
 Flow report for Pilha
-Sun Dec  3 17:53:40 2023
+Wed Dec  6 15:21:11 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -41,19 +41,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sun Dec  3 17:53:40 2023          ;
+; Flow Status                     ; Successful - Wed Dec  6 15:21:11 2023          ;
 ; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                   ; Pilha                                          ;
-; Top-level Entity Name           ; Barramento                                     ;
+; Top-level Entity Name           ; ULA                                            ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CGXFC7C7F23C8                                 ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 51 / 56,480 ( < 1 % )                          ;
-; Total registers                 ; 0                                              ;
-; Total pins                      ; 61 / 268 ( 23 % )                              ;
+; Logic utilization (in ALMs)     ; 195 / 56,480 ( < 1 % )                         ;
+; Total registers                 ; 41                                             ;
+; Total pins                      ; 56 / 268 ( 21 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                          ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                                ;
+; Total DSP Blocks                ; 1 / 156 ( < 1 % )                              ;
 ; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                                  ;
 ; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                                  ;
 ; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                                  ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2023 17:52:18 ;
+; Start date & time ; 12/06/2023 15:19:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pilha               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 180454979761554.170163673814796        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 180454979761554.170188677107312        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -89,11 +89,11 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; Barramento  ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; Barramento  ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; Barramento  ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; Barramento                             ; Pilha         ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; ULA                                    ; Pilha         ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -102,12 +102,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4839 MB             ; 00:00:22                           ;
-; Fitter               ; 00:00:47     ; 1.0                     ; 6699 MB             ; 00:01:08                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4874 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.1                     ; 5194 MB             ; 00:00:09                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4741 MB             ; 00:00:02                           ;
-; Total                ; 00:01:17     ; --                      ; --                  ; 00:01:49                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4834 MB             ; 00:00:25                           ;
+; Fitter               ; 00:00:55     ; 1.0                     ; 6701 MB             ; 00:01:18                           ;
+; Assembler            ; 00:00:10     ; 1.0                     ; 4867 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:09     ; 1.2                     ; 5206 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4730 MB             ; 00:00:02                           ;
+; Total                ; 00:01:35     ; --                      ; --                  ; 00:02:03                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -4,243 +4,227 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "io_0[0]",
+					"name" : "concluido",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[1]",
+					"name" : "Data[0]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[2]",
+					"name" : "Data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[3]",
+					"name" : "Data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[4]",
+					"name" : "Data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[5]",
+					"name" : "Data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[6]",
+					"name" : "Data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "io_0[7]",
+					"name" : "Data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[0]",
+					"name" : "Data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[1]",
+					"name" : "Data[8]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[2]",
+					"name" : "Data[9]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[3]",
+					"name" : "Data[10]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[4]",
+					"name" : "Data[11]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[5]",
+					"name" : "Data[12]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[6]",
+					"name" : "Data[13]",
 					"strict" : false
 				},
 				{
-					"name" : "io_1[7]",
+					"name" : "Data[14]",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[0]",
+					"name" : "Data[15]",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[1]",
+					"name" : "processar",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[2]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[3]",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[4]",
+					"name" : "op[3]",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[5]",
+					"name" : "op[0]",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[6]",
+					"name" : "ETp1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "io_2[7]",
+					"name" : "ETp1[11]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[0]",
+					"name" : "ETp1[12]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[1]",
+					"name" : "ETp1[13]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[2]",
+					"name" : "ETp1[14]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[3]",
+					"name" : "ETp1[15]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[4]",
+					"name" : "ETp1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[5]",
+					"name" : "ETp1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[6]",
+					"name" : "ETp1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "io_3[7]",
+					"name" : "ETp1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[0]",
+					"name" : "ETp1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[1]",
+					"name" : "ETp1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[2]",
+					"name" : "ETp1[7]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[3]",
+					"name" : "ETp1[8]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[4]",
+					"name" : "ETp1[9]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[5]",
+					"name" : "ETp1[10]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[6]",
+					"name" : "ETp2[13]",
 					"strict" : false
 				},
 				{
-					"name" : "io_4[7]",
+					"name" : "ETp2[14]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[0]",
+					"name" : "ETp2[15]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[1]",
+					"name" : "ETp2[11]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[2]",
+					"name" : "ETp2[12]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[3]",
+					"name" : "ETp2[10]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[4]",
+					"name" : "ETp2[8]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[5]",
+					"name" : "ETp2[9]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[6]",
+					"name" : "ETp2[7]",
 					"strict" : false
 				},
 				{
-					"name" : "io_5[7]",
+					"name" : "ETp2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_0[0]",
+					"name" : "ETp2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_1[0]",
+					"name" : "ETp2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_2[0]",
+					"name" : "ETp2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_3[0]",
+					"name" : "ETp2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_4[0]",
+					"name" : "ETp2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_5[0]",
+					"name" : "ETp2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_0[1]",
+					"name" : "op[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ctrl_1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_3[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_4[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ctrl_5[1]",
+					"name" : "op[2]",
 					"strict" : false
 				}
 			]
