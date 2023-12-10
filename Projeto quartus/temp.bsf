@@ -19,31 +19,31 @@ Intel and sold by Intel or its authorized distributors.  Please
 refer to the applicable agreement for further details, at
 https://fpgasoftware.intel.com/eula.
 */
-(header "symbol" (version "1.1"))
+(header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 280 96)
-	(text "temp" (rect 5 0 25 12)(font "Arial" ))
-	(text "inst" (rect 8 64 20 76)(font "Arial" ))
+	(rect 64 64 328 144)
+	(text "temp" (rect 5 0 29 12)(font "Arial" ))
+	(text "inst" (rect 8 64 25 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "io" (rect 0 0 5 12)(font "Arial" ))
-		(text "io" (rect 21 27 26 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 264 48)
-		(output)
-		(text "saidaUla[(Tamanho_Da_Palavra-1)..0]" (rect 0 0 153 12)(font "Arial" ))
-		(text "saidaUla[(Tamanho_Da_Palavra-1)..0]" (rect 90 43 243 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48)(line_width 3))
+		(text "io" (rect 0 0 8 12)(font "Arial" ))
+		(text "io" (rect 21 27 29 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 264 32)
-		(bidir)
-		(text "Data[(Tamanho_Da_Palavra-1)..0]" (rect 0 0 139 12)(font "Arial" ))
-		(text "Data[(Tamanho_Da_Palavra-1)..0]" (rect 104 27 243 39)(font "Arial" ))
+		(output)
+		(text "saidaUla[(Tamanho_Da_Palavra-1)..0]" (rect 0 0 187 12)(font "Arial" ))
+		(text "saidaUla[(Tamanho_Da_Palavra-1)..0]" (rect 88 24 246 36)(font "Arial" ))
 		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(bidir)
+		(text "Data[(Tamanho_Da_Palavra-1)..0]" (rect 0 0 168 12)(font "Arial" ))
+		(text "Data[(Tamanho_Da_Palavra-1)..0]" (rect 22 40 190 52)(font "Arial" ))
+		(line (pt 0 48)(pt 14 48)(line_width 3))
 	)
 	(parameter
 		"Tamanho_Da_Palavra"
@@ -51,7 +51,7 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 248 64)(line_width 1))
+		(rectangle (rect 16 16 248 64))
 	)
-	(annotation_block (parameter)(rect 280 -64 380 16))
+	(annotation_block (parameter)(rect 280 -24 512 16))
 )
