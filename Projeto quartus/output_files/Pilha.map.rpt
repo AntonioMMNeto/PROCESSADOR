@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pilha
-Sun Dec 10 10:43:09 2023
+Sun Dec 10 22:33:20 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -10,8 +10,15 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |temp
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -38,20 +45,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun Dec 10 10:43:09 2023              ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 10 22:33:20 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Pilha                                          ;
-; Top-level Entity Name              ; Block1                                         ;
+; Top-level Entity Name              ; temp                                           ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 32                                             ;
+;     Total combinational functions  ; 32                                             ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 33                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -61,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F23C7      ;                    ;
-; Top-level entity name                                            ; Block1             ; Pilha              ;
+; Top-level entity name                                            ; temp               ; Pilha              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -150,11 +157,155 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; temp.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 32       ;
+;                                             ;          ;
+; Total combinational functions               ; 32       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 32       ;
+;     -- <=2 input functions                  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 32       ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 33       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; io~input ;
+; Maximum fan-out                             ; 48       ;
+; Total fan-out                               ; 193      ;
+; Average fan-out                             ; 1.69     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |temp                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |temp               ; temp        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; tmp[0]                                              ; io                  ; yes                    ;
+; tmp[1]                                              ; io                  ; yes                    ;
+; tmp[2]                                              ; io                  ; yes                    ;
+; tmp[3]                                              ; io                  ; yes                    ;
+; tmp[4]                                              ; io                  ; yes                    ;
+; tmp[5]                                              ; io                  ; yes                    ;
+; tmp[6]                                              ; io                  ; yes                    ;
+; tmp[7]                                              ; io                  ; yes                    ;
+; tmp[8]                                              ; io                  ; yes                    ;
+; tmp[9]                                              ; io                  ; yes                    ;
+; tmp[10]                                             ; io                  ; yes                    ;
+; tmp[11]                                             ; io                  ; yes                    ;
+; tmp[12]                                             ; io                  ; yes                    ;
+; tmp[13]                                             ; io                  ; yes                    ;
+; tmp[14]                                             ; io                  ; yes                    ;
+; tmp[15]                                             ; io                  ; yes                    ;
+; wo[0]                                               ; io                  ; yes                    ;
+; wo[1]                                               ; io                  ; yes                    ;
+; wo[2]                                               ; io                  ; yes                    ;
+; wo[3]                                               ; io                  ; yes                    ;
+; wo[4]                                               ; io                  ; yes                    ;
+; wo[5]                                               ; io                  ; yes                    ;
+; wo[6]                                               ; io                  ; yes                    ;
+; wo[7]                                               ; io                  ; yes                    ;
+; wo[8]                                               ; io                  ; yes                    ;
+; wo[9]                                               ; io                  ; yes                    ;
+; wo[10]                                              ; io                  ; yes                    ;
+; wo[11]                                              ; io                  ; yes                    ;
+; wo[12]                                              ; io                  ; yes                    ;
+; wo[13]                                              ; io                  ; yes                    ;
+; wo[14]                                              ; io                  ; yes                    ;
+; wo[15]                                              ; io                  ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |temp ;
++--------------------+-------+-----------------------------------------+
+; Parameter Name     ; Value ; Type                                    ;
++--------------------+-------+-----------------------------------------+
+; Tamanho_Da_Palavra ; 16    ; Signed Integer                          ;
++--------------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 33                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 32                          ;
+;     normal            ; 32                          ;
+;         3 data inputs ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.84                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -163,7 +314,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sun Dec 10 10:42:58 2023
+    Info: Processing started: Sun Dec 10 22:33:00 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pilha -c Pilha
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -177,22 +328,72 @@ Info (12021): Found 1 design units, including 1 entities, in source file block1.
     Info (12023): Found entity 1: Block1
 Info (12021): Found 1 design units, including 1 entities, in source file temp.sv
     Info (12023): Found entity 1: temp File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 1
-Info (12127): Elaborating entity "Block1" for the top level hierarchy
-Error (275051): Bus range for signal "pin "Endereco[(Largura_da_pilha-1)..0]"" must be a number
-Error (275051): Bus range for signal "pin "io_0[(Largura_barramento-1)..0]"" must be a number
-Error (275051): Bus range for signal "pin "io_1[(Largura_barramento-1)..0]"" must be a number
-Error (12153): Can't elaborate top-level user hierarchy
-Info (144001): Generated suppressed messages file C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 4715 megabytes
-    Error: Processing ended: Sun Dec 10 10:43:09 2023
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:22
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.map.smsg.
+Info (12127): Elaborating entity "temp" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at temp.sv(29): variable "wI" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 29
+Warning (10235): Verilog HDL Always Construct warning at temp.sv(33): variable "tmp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "tmp", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "wo", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "wo[0]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[1]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[2]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[3]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[4]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[5]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[6]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[7]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[8]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[9]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[10]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[11]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[12]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[13]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[14]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "wo[15]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[0]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[1]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[2]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[3]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[4]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[5]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[6]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[7]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[8]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[9]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[10]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[11]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[12]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[13]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[14]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Info (10041): Inferred latch for "tmp[15]" at temp.sv(33) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 33
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[0].ctrl_i" to the node "tmp[0]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[1].ctrl_i" to the node "tmp[1]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[2].ctrl_i" to the node "tmp[2]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[3].ctrl_i" to the node "tmp[3]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[4].ctrl_i" to the node "tmp[4]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[5].ctrl_i" to the node "tmp[5]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[6].ctrl_i" to the node "tmp[6]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[7].ctrl_i" to the node "tmp[7]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[8].ctrl_i" to the node "tmp[8]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[9].ctrl_i" to the node "tmp[9]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[10].ctrl_i" to the node "tmp[10]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[11].ctrl_i" to the node "tmp[11]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[12].ctrl_i" to the node "tmp[12]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[13].ctrl_i" to the node "tmp[13]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[14].ctrl_i" to the node "tmp[14]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[15].ctrl_i" to the node "tmp[15]" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 32 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Sun Dec 10 22:33:20 2023
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:23
 
 

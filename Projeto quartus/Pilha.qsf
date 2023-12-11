@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY Block1
+set_global_assignment -name TOP_LEVEL_ENTITY temp
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.2
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:44:48  DECEMBER 01, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
