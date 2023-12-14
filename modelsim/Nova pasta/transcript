@@ -1,0 +1,36 @@
+# Compile of Block1.v was successful.
+# Compile of ULA.sv was successful.
+# Compile of Pilha.sv was successful.
+# Compile of Barramento.sv was successful.
+# Compile of tb_temp.v was successful.
+# Compile of temp.sv was successful.
+# Compile of tb_Pilha.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim -gui work.tb_temp
+# vsim -gui work.tb_temp 
+# Start time: 11:18:40 on Dec 13,2023
+# Loading work.tb_temp
+# Loading sv_std.std
+# Loading work.temp
+run
+# 
+# TESTE DO REGISTRADOR 'temp'
+# Valor da Porta Para a Ula Alterado Para :    x
+quit -sim
+# End time: 11:19:13 on Dec 13,2023, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 6
+vsim -gui work.tb_temp
+# vsim -gui work.tb_temp 
+# Start time: 11:19:32 on Dec 13,2023
+# Loading work.tb_temp
+# Loading sv_std.std
+# Loading work.temp
+do C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/wave-TEMP.do
+run
+# 
+# TESTE DO REGISTRADOR 'temp'
+# Valor da Porta Para a Ula Alterado Para :    x
+restart -f
+quit -sim
+# End time: 11:20:41 on Dec 13,2023, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 1

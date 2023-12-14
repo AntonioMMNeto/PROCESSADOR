@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim
 vBarramento
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1702260122
+Z2 !s110 1702484657
 !i10b 1
 !s100 `k8CYcTL6=khMVej:];QG2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ R0
 w1702231451
 8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv
 FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv
-!i122 316
+!i122 480
 L0 1 87
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1702260121.000000
+Z6 !s108 1702484657.000000
 !s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv|
 !i113 1
@@ -36,7 +36,7 @@ Z7 o-work work -sv
 Z8 tCvgOpt 0
 n@barramento
 vBlock1
-Z9 !s110 1702260121
+R2
 !i10b 1
 !s100 0z4TCUaO8czNTgiB69E^G1
 R3
@@ -46,22 +46,22 @@ R0
 w1702216065
 8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v
 FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v
-!i122 312
+!i122 481
 L0 20 130
 R5
 r1
 !s85 0
 31
-!s108 1702260120.000000
+R6
 !s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v|
 !i113 1
-Z10 o-work work
+Z9 o-work work
 R8
 n@block1
 vPilha
 R1
-R9
+R2
 !i10b 1
 !s100 ^hD^kb>:21Il:Zeko^jo:1
 R3
@@ -72,7 +72,7 @@ R0
 w1702228231
 8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Pilha.sv
 FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Pilha.sv
-!i122 315
+!i122 482
 L0 1 40
 R5
 r1
@@ -85,49 +85,73 @@ R6
 R7
 R8
 n@pilha
-vtb_temp
-R2
+vtb_Pilha
+Z10 !s110 1702484658
 !i10b 1
-!s100 b@>LTl8cILSb3>H?13G=P2
+!s100 gHz^6PZN>zQiJH9UeM>hD3
 R3
-IQ<BLZDmO`BOLE<LYfID6m1
+I0R5Dbl3QI342T?ol:_U=80
 R4
 R0
-w1702260118
-8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_temp.v
-FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_temp.v
-!i122 317
-L0 2 30
-R5
-r1
-!s85 0
-31
-!s108 1702260122.000000
-!s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_temp.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_temp.v|
-!i113 1
-R10
-R8
-vtemp
-R1
-R9
-!i10b 1
-!s100 lU47bX?:V<l^nlMaok:ai2
-R3
-I@fIe6Z5hU_5GCgg7_8G2M3
-R4
-S1
-R0
-w1702219113
-8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv
-FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv
-!i122 314
-L0 1 38
+w1702484640
+8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v
+FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v
+!i122 483
+L0 2 82
 R5
 r1
 !s85 0
 31
 R6
+!s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v|
+!i113 1
+R9
+R8
+ntb_@pilha
+vtb_temp
+R10
+!i10b 1
+!s100 Ql:6ZM:PmmBakWk>W23Vk3
+R3
+IlV>A8DC2bOOT;7Z3833M>1
+R4
+R0
+w1702476392
+8C:\Users\anton\OneDrive\Documentos\GitHub\PROCESSADOR\modelsim\tb_temp.v
+FC:\Users\anton\OneDrive\Documentos\GitHub\PROCESSADOR\modelsim\tb_temp.v
+!i122 484
+L0 2 35
+R5
+r1
+!s85 0
+31
+Z11 !s108 1702484658.000000
+!s107 C:\Users\anton\OneDrive\Documentos\GitHub\PROCESSADOR\modelsim\tb_temp.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\anton\OneDrive\Documentos\GitHub\PROCESSADOR\modelsim\tb_temp.v|
+!i113 1
+R9
+R8
+vtemp
+R1
+R10
+!i10b 1
+!s100 YO7TAWLCQ`9zTU97aN2WO2
+R3
+Id;<93FHd:I<?84n61>4bR1
+R4
+S1
+R0
+w1702475862
+8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv
+FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv
+!i122 485
+L0 1 39
+R5
+r1
+!s85 0
+31
+R11
 !s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv|
 !i113 1
@@ -135,7 +159,7 @@ R7
 R8
 vULA
 R1
-R9
+!s110 1702484659
 !i10b 1
 !s100 0kezS:4<DFWN0jZE6AP2O3
 R3
@@ -146,13 +170,13 @@ R0
 w1702218805
 8C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv
 FC:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv
-!i122 313
+!i122 486
 L0 1 123
 R5
 r1
 !s85 0
 31
-R6
+R11
 !s107 C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv|
 !i113 1

@@ -1,0 +1,50 @@
+C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv {1 {vlog -work work -sv -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Barramento.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Barramento
+
+Top level modules:
+	Barramento
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v {1 {vlog -work work -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_Pilha.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_Pilha
+
+Top level modules:
+	tb_Pilha
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/tb_temp.v {1 {vlog -work work -stats=none {C:\Users\anton\OneDrive\Documentos\GitHub\PROCESSADOR\modelsim\tb_temp.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_temp
+
+Top level modules:
+	tb_temp
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v {1 {vlog -work work -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Block1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Block1
+
+Top level modules:
+	Block1
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Pilha.sv {1 {vlog -work work -sv -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/Pilha.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Pilha
+
+Top level modules:
+	Pilha
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv {1 {vlog -work work -sv -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/temp.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module temp
+
+Top level modules:
+	temp
+
+} {} {}} C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv {1 {vlog -work work -sv -stats=none C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/modelsim/ULA.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ULA
+
+Top level modules:
+	ULA
+
+} {} {}}

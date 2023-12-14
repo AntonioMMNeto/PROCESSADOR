@@ -3,14 +3,14 @@ module temp (Data,saidaUla,io);
 parameter Tamanho_Da_Palavra=16;
 
 inout wire [Tamanho_Da_Palavra-1:0] Data;
-output wire [Tamanho_Da_Palavra-1:0] saidaUla;
+output reg [Tamanho_Da_Palavra-1:0] saidaUla;
 input wire io;
 
 reg [Tamanho_Da_Palavra-1:0] tmp;
 reg  [Tamanho_Da_Palavra-1:0] wo;
 wire [Tamanho_Da_Palavra-1:0] wI;
 
-assign saidaUla=tmp;
+//assign saidaUla=tmp ;
 
 genvar x;
 generate 
@@ -27,6 +27,7 @@ begin
 	if(io)
 	begin
 		tmp=wI;
+		saidaUla<=wI;
 	end
    else
 	begin

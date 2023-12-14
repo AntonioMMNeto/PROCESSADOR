@@ -1,5 +1,5 @@
 Fitter report for Pilha
-Sun Dec 10 22:33:40 2023
+Wed Dec 13 10:58:36 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Dec 10 22:33:40 2023          ;
+; Fitter Status                      ; Successful - Wed Dec 13 10:58:36 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Pilha                                          ;
 ; Top-level Entity Name              ; temp                                           ;
@@ -152,12 +152,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.2%      ;
+;     Processors 2-4         ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -1037,45 +1037,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+---------------------------------------------------+
-; Pad To Core Delay Chain Fanout                    ;
-+---------------------+-------------------+---------+
-; Source Pin / Fanout ; Pad To Core Index ; Setting ;
-+---------------------+-------------------+---------+
-; Data[0]             ;                   ;         ;
-;      - tmp[0]       ; 0                 ; 6       ;
-; Data[1]             ;                   ;         ;
-;      - tmp[1]       ; 1                 ; 6       ;
-; Data[2]             ;                   ;         ;
-;      - tmp[2]       ; 1                 ; 6       ;
-; Data[3]             ;                   ;         ;
-;      - tmp[3]       ; 0                 ; 6       ;
-; Data[4]             ;                   ;         ;
-;      - tmp[4]       ; 1                 ; 6       ;
-; Data[5]             ;                   ;         ;
-;      - tmp[5]       ; 0                 ; 6       ;
-; Data[6]             ;                   ;         ;
-;      - tmp[6]       ; 0                 ; 6       ;
-; Data[7]             ;                   ;         ;
-;      - tmp[7]       ; 0                 ; 6       ;
-; Data[8]             ;                   ;         ;
-;      - tmp[8]       ; 0                 ; 6       ;
-; Data[9]             ;                   ;         ;
-;      - tmp[9]       ; 0                 ; 6       ;
-; Data[10]            ;                   ;         ;
-;      - tmp[10]      ; 1                 ; 6       ;
-; Data[11]            ;                   ;         ;
-;      - tmp[11]      ; 0                 ; 6       ;
-; Data[12]            ;                   ;         ;
-;      - tmp[12]      ; 0                 ; 6       ;
-; Data[13]            ;                   ;         ;
-;      - tmp[13]      ; 0                 ; 6       ;
-; Data[14]            ;                   ;         ;
-;      - tmp[14]      ; 1                 ; 6       ;
-; Data[15]            ;                   ;         ;
-;      - tmp[15]      ; 1                 ; 6       ;
-; io                  ;                   ;         ;
-+---------------------+-------------------+---------+
++---------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                          ;
++---------------------------+-------------------+---------+
+; Source Pin / Fanout       ; Pad To Core Index ; Setting ;
++---------------------------+-------------------+---------+
+; Data[0]                   ;                   ;         ;
+;      - saidaUla[0]$latch  ; 0                 ; 6       ;
+; Data[1]                   ;                   ;         ;
+;      - saidaUla[1]$latch  ; 1                 ; 6       ;
+; Data[2]                   ;                   ;         ;
+;      - saidaUla[2]$latch  ; 1                 ; 6       ;
+; Data[3]                   ;                   ;         ;
+;      - saidaUla[3]$latch  ; 0                 ; 6       ;
+; Data[4]                   ;                   ;         ;
+;      - saidaUla[4]$latch  ; 1                 ; 6       ;
+; Data[5]                   ;                   ;         ;
+;      - saidaUla[5]$latch  ; 0                 ; 6       ;
+; Data[6]                   ;                   ;         ;
+;      - saidaUla[6]$latch  ; 0                 ; 6       ;
+; Data[7]                   ;                   ;         ;
+;      - saidaUla[7]$latch  ; 0                 ; 6       ;
+; Data[8]                   ;                   ;         ;
+;      - saidaUla[8]$latch  ; 0                 ; 6       ;
+; Data[9]                   ;                   ;         ;
+;      - saidaUla[9]$latch  ; 0                 ; 6       ;
+; Data[10]                  ;                   ;         ;
+;      - saidaUla[10]$latch ; 1                 ; 6       ;
+; Data[11]                  ;                   ;         ;
+;      - saidaUla[11]$latch ; 0                 ; 6       ;
+; Data[12]                  ;                   ;         ;
+;      - saidaUla[12]$latch ; 0                 ; 6       ;
+; Data[13]                  ;                   ;         ;
+;      - saidaUla[13]$latch ; 0                 ; 6       ;
+; Data[14]                  ;                   ;         ;
+;      - saidaUla[14]$latch ; 1                 ; 6       ;
+; Data[15]                  ;                   ;         ;
+;      - saidaUla[15]$latch ; 1                 ; 6       ;
+; io                        ;                   ;         ;
++---------------------------+-------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -1386,7 +1386,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1394,10 +1394,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5707 megabytes
-    Info: Processing ended: Sun Dec 10 22:33:40 2023
+    Info: Peak virtual memory: 5708 megabytes
+    Info: Processing ended: Wed Dec 13 10:58:37 2023
     Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+
