@@ -10,39 +10,44 @@ reg clk_tb;
 
 assign Data_out_tb=Data_in_tb;
 
+reg [Largura_da_pilha-1:0] valor [0:Tamanho_da_pilha-1];
+reg [Tamanho_endereco-1:0] y;
 
 Pilha Pilha_tb(.Data(Data_out_tb), .Endereco(Endereco_tb), .clk(clk_tb), .io(io_tb));
 
-integer y,valor[Tamanho_da_pilha-1:0],saida[Tamanho_da_pilha-1:0],s=0;
+integer saida[0:Tamanho_da_pilha-1],s=0;
 
 
 initial
 begin
 $monitor("CARREGANDO VALORES ALEATORIOS NA PILHA");
 $display("");
-for(y=0 ; y < Tamanho_da_pilha; y=y+1)
+for(y=0 ; y < (Tamanho_da_pilha-1) ; y=y+1)
 begin
-	valor[y]=$random();
-	#10
+	valor[y]=$random(10);
 	io_tb=1;
-	clk_tb=1;
+	#10
 	Endereco_tb=y;
 	Data_in_tb=valor[y];
-	$display("carrega %d",Pilha_tb.BancoReg[3]);
+	#1
+	clk_tb=1;
+	
 
-	#10
+	#1
 	clk_tb=0;
+	#5
 	io_tb=0;
 end
 s=1;
 end
 
+
 always 
 begin
-wait(s);
+
 $monitor("CHECANDO SE A SAÍDA DA PILHA É IGUAL AOS VALORES DA ENTRADA");
 $display("");
-for(y=0 ; y < Tamanho_da_pilha; y=y+1)
+for(y=0 ; y <(Tamanho_da_pilha-1) ; y=y+1)
 begin
 Endereco_tb=y;
 saida[y]=Data_out_tb;

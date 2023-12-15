@@ -3,7 +3,7 @@ parameter Largura_da_pilha=16 ,Tamanho_da_pilha=64 ,Tamanho_endereco=6;
 
 //Declaração de portas
 inout wire [Largura_da_pilha-1:0] Data; //A porta Data é bidirecional.
-input wire [Largura_da_pilha-1:0]Endereco;
+input wire [Tamanho_endereco-1:0]Endereco;
 input wire clk;
 input wire io;
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pilha
-Wed Dec 13 10:58:17 2023
+Thu Dec 14 11:58:53 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -13,13 +13,17 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Analysis & Synthesis RAM Summary
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |temp
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
- 14. Analysis & Synthesis Suppressed Messages
+ 10. Registers Packed Into Inferred Megafunctions
+ 11. Source assignments for altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |Pilha
+ 13. Parameter Settings for Inferred Entity Instance: altsyncram:BancoReg_rtl_0
+ 14. altsyncram Parameter Settings by Entity Instance
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,18 +50,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 13 10:58:17 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 14 11:58:53 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Pilha                                          ;
-; Top-level Entity Name              ; temp                                           ;
+; Top-level Entity Name              ; Pilha                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 32                                             ;
-;     Total combinational functions  ; 32                                             ;
+; Total logic elements               ; 16                                             ;
+;     Total combinational functions  ; 16                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 33                                             ;
+; Total pins                         ; 24                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 1,024                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -69,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F23C7      ;                    ;
-; Top-level entity name                                            ; temp               ; Pilha              ;
+; Top-level entity name                                            ; Pilha              ; Pilha              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -158,21 +162,30 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; temp.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
+; Pilha.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                     ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                         ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                         ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
+; db/altsyncram_kpd1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/altsyncram_kpd1.tdf ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -180,99 +193,53 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 32       ;
+; Estimated Total logic elements              ; 16       ;
 ;                                             ;          ;
-; Total combinational functions               ; 32       ;
+; Total combinational functions               ; 16       ;
 ; Logic element usage by number of LUT inputs ;          ;
 ;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 32       ;
-;     -- <=2 input functions                  ; 0        ;
+;     -- 3 input functions                    ; 0        ;
+;     -- <=2 input functions                  ; 16       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 32       ;
+;     -- normal mode                          ; 16       ;
 ;     -- arithmetic mode                      ; 0        ;
 ;                                             ;          ;
 ; Total registers                             ; 0        ;
 ;     -- Dedicated logic registers            ; 0        ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
-; I/O pins                                    ; 33       ;
+; I/O pins                                    ; 24       ;
+; Total memory bits                           ; 1024     ;
 ;                                             ;          ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; io~input ;
 ; Maximum fan-out                             ; 48       ;
-; Total fan-out                               ; 193      ;
-; Average fan-out                             ; 1.69     ;
+; Total fan-out                               ; 248      ;
+; Average fan-out                             ; 2.58     ;
 +---------------------------------------------+----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |temp                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |temp               ; temp        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name     ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
+; |Pilha                                 ; 16 (16)             ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 24   ; 0            ; |Pilha                                                          ; Pilha           ; work         ;
+;    |altsyncram:BancoReg_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pilha|altsyncram:BancoReg_rtl_0                                ; altsyncram      ; work         ;
+;       |altsyncram_kpd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pilha|altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated ; altsyncram_kpd1 ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; saidaUla[0]$latch                                   ; io                  ; yes                    ;
-; saidaUla[1]$latch                                   ; io                  ; yes                    ;
-; saidaUla[2]$latch                                   ; io                  ; yes                    ;
-; saidaUla[3]$latch                                   ; io                  ; yes                    ;
-; saidaUla[4]$latch                                   ; io                  ; yes                    ;
-; saidaUla[5]$latch                                   ; io                  ; yes                    ;
-; saidaUla[6]$latch                                   ; io                  ; yes                    ;
-; saidaUla[7]$latch                                   ; io                  ; yes                    ;
-; saidaUla[8]$latch                                   ; io                  ; yes                    ;
-; saidaUla[9]$latch                                   ; io                  ; yes                    ;
-; saidaUla[10]$latch                                  ; io                  ; yes                    ;
-; saidaUla[11]$latch                                  ; io                  ; yes                    ;
-; saidaUla[12]$latch                                  ; io                  ; yes                    ;
-; saidaUla[13]$latch                                  ; io                  ; yes                    ;
-; saidaUla[14]$latch                                  ; io                  ; yes                    ;
-; saidaUla[15]$latch                                  ; io                  ; yes                    ;
-; wo[0]                                               ; io                  ; yes                    ;
-; wo[1]                                               ; io                  ; yes                    ;
-; wo[2]                                               ; io                  ; yes                    ;
-; wo[3]                                               ; io                  ; yes                    ;
-; wo[4]                                               ; io                  ; yes                    ;
-; wo[5]                                               ; io                  ; yes                    ;
-; wo[6]                                               ; io                  ; yes                    ;
-; wo[7]                                               ; io                  ; yes                    ;
-; wo[8]                                               ; io                  ; yes                    ;
-; wo[9]                                               ; io                  ; yes                    ;
-; wo[10]                                              ; io                  ; yes                    ;
-; wo[11]                                              ; io                  ; yes                    ;
-; wo[12]                                              ; io                  ; yes                    ;
-; wo[13]                                              ; io                  ; yes                    ;
-; wo[14]                                              ; io                  ; yes                    ;
-; wo[15]                                              ; io                  ; yes                    ;
-; tmp[0]                                              ; io                  ; yes                    ;
-; tmp[1]                                              ; io                  ; yes                    ;
-; tmp[2]                                              ; io                  ; yes                    ;
-; tmp[3]                                              ; io                  ; yes                    ;
-; tmp[4]                                              ; io                  ; yes                    ;
-; tmp[5]                                              ; io                  ; yes                    ;
-; tmp[6]                                              ; io                  ; yes                    ;
-; tmp[7]                                              ; io                  ; yes                    ;
-; tmp[8]                                              ; io                  ; yes                    ;
-; tmp[9]                                              ; io                  ; yes                    ;
-; tmp[10]                                             ; io                  ; yes                    ;
-; tmp[11]                                             ; io                  ; yes                    ;
-; tmp[12]                                             ; io                  ; yes                    ;
-; tmp[13]                                             ; io                  ; yes                    ;
-; tmp[14]                                             ; io                  ; yes                    ;
-; tmp[15]                                             ; io                  ; yes                    ;
-; Number of user-specified and inferred latches = 48  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                        ;
++---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 16           ; 64           ; 16           ; 1024 ; None ;
++---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +------------------------------------------------------+
@@ -290,14 +257,115 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |temp ;
-+--------------------+-------+-----------------------------------------+
-; Parameter Name     ; Value ; Type                                    ;
-+--------------------+-------+-----------------------------------------+
-; Tamanho_Da_Palavra ; 16    ; Signed Integer                          ;
-+--------------------+-------+-----------------------------------------+
++----------------------------------------------+
+; Registers Packed Into Inferred Megafunctions ;
++---------------+----------------+-------------+
+; Register Name ; Megafunction   ; Type        ;
++---------------+----------------+-------------+
+; wo[0..15]     ; BancoReg_rtl_0 ; RAM         ;
++---------------+----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Source assignments for altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated ;
++---------------------------------+--------------------+------+-------------------+
+; Assignment                      ; Value              ; From ; To                ;
++---------------------------------+--------------------+------+-------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                 ;
++---------------------------------+--------------------+------+-------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Pilha ;
++------------------+-------+--------------------------------------------+
+; Parameter Name   ; Value ; Type                                       ;
++------------------+-------+--------------------------------------------+
+; Largura_da_pilha ; 16    ; Signed Integer                             ;
+; Tamanho_da_pilha ; 64    ; Signed Integer                             ;
+; Tamanho_endereco ; 6     ; Signed Integer                             ;
++------------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:BancoReg_rtl_0 ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped        ;
+; WIDTH_A                            ; 16                   ; Untyped        ;
+; WIDTHAD_A                          ; 6                    ; Untyped        ;
+; NUMWORDS_A                         ; 64                   ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 16                   ; Untyped        ;
+; WIDTHAD_B                          ; 6                    ; Untyped        ;
+; NUMWORDS_B                         ; 64                   ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; UNUSED               ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_kpd1      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                      ;
++-------------------------------------------+---------------------------+
+; Name                                      ; Value                     ;
++-------------------------------------------+---------------------------+
+; Number of entity instances                ; 1                         ;
+; Entity Instance                           ; altsyncram:BancoReg_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                 ;
+;     -- WIDTH_A                            ; 16                        ;
+;     -- NUMWORDS_A                         ; 64                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED              ;
+;     -- WIDTH_B                            ; 16                        ;
+;     -- NUMWORDS_B                         ; 64                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                 ;
++-------------------------------------------+---------------------------+
 
 
 +-----------------------------------------------------+
@@ -305,14 +373,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 33                          ;
+; boundary_port         ; 24                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 32                          ;
-;     normal            ; 32                          ;
-;         3 data inputs ; 32                          ;
+; cycloneiii_lcell_comb ; 16                          ;
+;     normal            ; 16                          ;
+;         2 data inputs ; 16                          ;
+; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.84                        ;
+; Average LUT depth     ; 0.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -331,7 +400,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Wed Dec 13 10:58:01 2023
+    Info: Processing started: Thu Dec 14 11:58:42 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pilha -c Pilha
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -345,109 +414,74 @@ Info (12021): Found 1 design units, including 1 entities, in source file block1.
     Info (12023): Found entity 1: Block1
 Info (12021): Found 1 design units, including 1 entities, in source file temp.sv
     Info (12023): Found entity 1: temp File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 1
-Info (12127): Elaborating entity "temp" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at temp.sv(29): variable "wI" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 29
-Warning (10235): Verilog HDL Always Construct warning at temp.sv(30): variable "wI" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 30
-Warning (10235): Verilog HDL Always Construct warning at temp.sv(34): variable "tmp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "tmp", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "saidaUla", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "wo", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[0]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[1]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[2]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[3]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[4]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[5]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[6]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[7]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[8]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[9]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[10]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[11]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[12]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[13]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[14]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "saidaUla[15]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
-Info (10041): Inferred latch for "wo[0]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[1]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[2]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[3]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[4]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[5]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[6]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[7]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[8]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[9]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[10]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[11]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[12]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[13]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[14]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "wo[15]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[0]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[1]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[2]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[3]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[4]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[5]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[6]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[7]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[8]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[9]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[10]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[11]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[12]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[13]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[14]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-Info (10041): Inferred latch for "tmp[15]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (12127): Elaborating entity "Pilha" for the top level hierarchy
+Warning (276027): Inferred dual-clock RAM node "BancoReg_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "BancoReg_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "altsyncram:BancoReg_rtl_0"
+Info (12133): Instantiated megafunction "altsyncram:BancoReg_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "6"
+    Info (12134): Parameter "NUMWORDS_B" = "64"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kpd1.tdf
+    Info (12023): Found entity 1: altsyncram_kpd1 File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/altsyncram_kpd1.tdf Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[0].ctrl_i" to the node "saidaUla[0]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[1].ctrl_i" to the node "saidaUla[1]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[2].ctrl_i" to the node "saidaUla[2]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[3].ctrl_i" to the node "saidaUla[3]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[4].ctrl_i" to the node "saidaUla[4]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[5].ctrl_i" to the node "saidaUla[5]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[6].ctrl_i" to the node "saidaUla[6]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[7].ctrl_i" to the node "saidaUla[7]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[8].ctrl_i" to the node "saidaUla[8]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[9].ctrl_i" to the node "saidaUla[9]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[10].ctrl_i" to the node "saidaUla[10]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[11].ctrl_i" to the node "saidaUla[11]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[12].ctrl_i" to the node "saidaUla[12]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[13].ctrl_i" to the node "saidaUla[13]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[14].ctrl_i" to the node "saidaUla[14]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[15].ctrl_i" to the node "saidaUla[15]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "tmp[0]" merged with LATCH primitive "saidaUla[0]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[1]" merged with LATCH primitive "saidaUla[1]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[2]" merged with LATCH primitive "saidaUla[2]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[3]" merged with LATCH primitive "saidaUla[3]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[4]" merged with LATCH primitive "saidaUla[4]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[5]" merged with LATCH primitive "saidaUla[5]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[6]" merged with LATCH primitive "saidaUla[6]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[7]" merged with LATCH primitive "saidaUla[7]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[8]" merged with LATCH primitive "saidaUla[8]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[9]" merged with LATCH primitive "saidaUla[9]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[10]" merged with LATCH primitive "saidaUla[10]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[11]" merged with LATCH primitive "saidaUla[11]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[12]" merged with LATCH primitive "saidaUla[12]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[13]" merged with LATCH primitive "saidaUla[13]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[14]" merged with LATCH primitive "saidaUla[14]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
-    Info (13026): Duplicate LATCH primitive "tmp[15]" merged with LATCH primitive "saidaUla[15]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[0].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a0" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[1].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a1" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[2].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a2" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[3].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a3" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[4].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a4" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[5].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a5" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[6].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a6" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[7].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a7" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[8].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a8" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[9].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a9" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[10].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a10" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[11].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a11" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[12].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a12" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[13].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a13" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[14].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a14" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[15].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a15" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 16 output pins
+Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 0 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 32 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 4771 megabytes
-    Info: Processing ended: Wed Dec 13 10:58:17 2023
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:24
+    Info (21061): Implemented 16 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4767 megabytes
+    Info: Processing ended: Thu Dec 14 11:58:53 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+

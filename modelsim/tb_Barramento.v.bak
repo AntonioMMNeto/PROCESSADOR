@@ -1,0 +1,19 @@
+`timescale 10ns/10ns
+module tb_Barramento;
+parameter Largura_da_pilha=16 ,Tamanho_da_pilha=64 ,Tamanho_endereco=6;
+
+reg [Largura_da_pilha-1:0] Data_in_tb;
+wire [Largura_da_pilha-1:0] Data_out_tb;
+reg [Tamanho_endereco-1:0] Endereco_tb;
+reg io_tb;
+reg clk_tb;
+
+assign Data_out_tb=Data_in_tb;
+
+reg [Largura_da_pilha-1:0] valor [0:Tamanho_da_pilha-1];
+reg [Tamanho_endereco-1:0] y;
+
+Pilha Pilha_tb(.Data(Data_out_tb), .Endereco(Endereco_tb), .clk(clk_tb), .io(io_tb));
+
+integer saida[0:Tamanho_da_pilha-1],s=0;
+

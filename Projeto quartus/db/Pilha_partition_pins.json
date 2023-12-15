@@ -4,70 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "saidaUla[0]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[1]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[2]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[3]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[4]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[5]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[6]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[7]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[8]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[9]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[10]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[11]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[12]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[13]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[14]",
-					"strict" : false
-				},
-				{
-					"name" : "saidaUla[15]",
-					"strict" : false
-				},
-				{
 					"name" : "Data[0]",
 					"strict" : false
 				},
@@ -133,6 +69,34 @@
 				},
 				{
 					"name" : "io",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[5]",
 					"strict" : false
 				}
 			]
