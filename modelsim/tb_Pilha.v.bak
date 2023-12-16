@@ -32,7 +32,6 @@ begin
 	#1
 	clk_tb=1;
 	
-	$display("carrega %d",Pilha_tb.BancoReg[63]);
 
 	#1
 	clk_tb=0;
@@ -42,9 +41,10 @@ end
 s=1;
 end
 
+
 always 
 begin
-wait(s);
+
 $monitor("CHECANDO SE A SAÍDA DA PILHA É IGUAL AOS VALORES DA ENTRADA");
 $display("");
 for(y=0 ; y <(Tamanho_da_pilha-1) ; y=y+1)

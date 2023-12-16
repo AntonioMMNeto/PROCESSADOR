@@ -31,7 +31,7 @@ generate
 		end
 endgenerate
 
-always @(clk)
+always @(posedge clk)
 begin
 	saida<=barramentoW;
 	barramentoR<=saida;

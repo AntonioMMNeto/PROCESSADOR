@@ -27,10 +27,8 @@ input wire reset;
 
 reg [Tamanho_Da_Palavra-1:0]Resultado;
 reg [1:0] estadoAtual,estadoFuturo,estadoIntermediario;
-reg executa;
+
 always @ ( posedge clk)
-begin
-if (executa)
 begin
 	case (op)
 		soma: 	  begin
@@ -74,11 +72,9 @@ begin
 					estadoIntermediario<=saidaDados;
 		     end  
 		default:	  begin
-					//executa<=0;
-					estadoIntermediario<=executando;
+					estadoIntermediario<=espera;
 			  end
-	endcase
-end	
+	endcase	
 end
 always @ ( posedge clk)
 begin
@@ -92,19 +88,17 @@ begin
 					begin
 						estadoFuturo<=espera;
 						concluido<=1'b0;
-						Data<=16'b0000000000000000;
-						executa<=1'b0;
+						Data<=0;
 					end
 				 end
 	 executando: begin
-						executa<=1'b1;
+
 						estadoFuturo<=estadoIntermediario;
 				   end
 	saidaDados: begin
 						Data<=Resultado;
 						concluido<=1'b1;
 						estadoFuturo<=espera;
-						executa<=1'b0;
 					end
 	endcase					
 end

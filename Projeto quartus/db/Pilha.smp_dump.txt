@@ -13,5 +13,5 @@ estadoFuturo.saidaDados 1 1 0
 
 State Machine - |ULA|estadoIntermediario
 Name estadoIntermediario.saidaDados 
-estadoIntermediario.executando 0 
+estadoIntermediario.espera 0 
 estadoIntermediario.saidaDados 1 

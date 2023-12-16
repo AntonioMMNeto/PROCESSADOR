@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "concluido",
+					"strict" : false
+				},
+				{
 					"name" : "Data[0]",
 					"strict" : false
 				},
@@ -68,7 +72,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "io",
+					"name" : "processar",
 					"strict" : false
 				},
 				{
@@ -76,27 +80,151 @@
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[0]",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[1]",
+					"name" : "op[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[2]",
+					"name" : "op[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[3]",
+					"name" : "op[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[4]",
+					"name" : "op[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Endereco[5]",
+					"name" : "ETp1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ETp1[0]",
 					"strict" : false
 				}
 			]

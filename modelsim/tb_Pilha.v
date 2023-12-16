@@ -1,4 +1,4 @@
-`timescale 10ns/10ns
+`timescale 10ns/1ns
 module tb_Pilha;
 parameter Largura_da_pilha=16 ,Tamanho_da_pilha=64 ,Tamanho_endereco=6;
 

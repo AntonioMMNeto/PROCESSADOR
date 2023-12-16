@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pilha
-Thu Dec 14 11:58:53 2023
+Fri Dec 15 18:13:45 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -13,17 +13,21 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. General Register Statistics
- 10. Registers Packed Into Inferred Megafunctions
- 11. Source assignments for altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |Pilha
- 13. Parameter Settings for Inferred Entity Instance: altsyncram:BancoReg_rtl_0
- 14. altsyncram Parameter Settings by Entity Instance
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |ULA|estadoAtual
+ 10. State Machine - |ULA|estadoFuturo
+ 11. State Machine - |ULA|estadoIntermediario
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |ULA
+ 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 18. lpm_mult Parameter Settings by Entity Instance
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,19 +54,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 14 11:58:53 2023          ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 15 18:13:45 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Pilha                                          ;
-; Top-level Entity Name              ; Pilha                                          ;
+; Top-level Entity Name              ; ULA                                            ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 16                                             ;
-;     Total combinational functions  ; 16                                             ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 24                                             ;
+; Total logic elements               ; 397                                            ;
+;     Total combinational functions  ; 397                                            ;
+;     Dedicated logic registers      ; 40                                             ;
+; Total registers                    ; 40                                             ;
+; Total pins                         ; 56                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 1,024                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 2                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
@@ -73,7 +77,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F23C7      ;                    ;
-; Top-level entity name                                            ; Pilha              ; Pilha              ;
+; Top-level entity name                                            ; ULA                ; Pilha              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,84 +166,145 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; Pilha.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv               ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
-; db/altsyncram_kpd1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/altsyncram_kpd1.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; ULA.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv                     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf                           ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                         ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/multcore.inc                           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc                           ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altshift.inc                           ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/mult_7dt.tdf            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                    ;         ;
+; db/lpm_divide_lkm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/lpm_divide_lkm.tdf      ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/sign_div_unsign_dnh.tdf ;         ;
+; db/alt_u_div_03f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/alt_u_div_03f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 16       ;
-;                                             ;          ;
-; Total combinational functions               ; 16       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 16       ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 16       ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 24       ;
-; Total memory bits                           ; 1024     ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; io~input ;
-; Maximum fan-out                             ; 48       ;
-; Total fan-out                               ; 248      ;
-; Average fan-out                             ; 2.58     ;
-+---------------------------------------------+----------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 397       ;
+;                                             ;           ;
+; Total combinational functions               ; 397       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 152       ;
+;     -- 3 input functions                    ; 180       ;
+;     -- <=2 input functions                  ; 65        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 245       ;
+;     -- arithmetic mode                      ; 152       ;
+;                                             ;           ;
+; Total registers                             ; 40        ;
+;     -- Dedicated logic registers            ; 40        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 56        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 2         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 40        ;
+; Total fan-out                               ; 1508      ;
+; Average fan-out                             ; 2.74      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                  ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name     ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
-; |Pilha                                 ; 16 (16)             ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 24   ; 0            ; |Pilha                                                          ; Pilha           ; work         ;
-;    |altsyncram:BancoReg_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pilha|altsyncram:BancoReg_rtl_0                                ; altsyncram      ; work         ;
-;       |altsyncram_kpd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pilha|altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated ; altsyncram_kpd1 ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ULA                                   ; 397 (101)           ; 40 (40)                   ; 0           ; 2            ; 0       ; 1         ; 56   ; 0            ; |ULA                                                                                                 ; ULA                 ; work         ;
+;    |lpm_divide:Div0|                   ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_lkm:auto_generated|  ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                   ; lpm_divide_lkm      ; work         ;
+;          |sign_div_unsign_dnh:divider| ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;             |alt_u_div_03f:divider|    ; 296 (296)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f       ; work         ;
+;    |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |ULA|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
+;       |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |ULA|lpm_mult:Mult0|mult_7dt:auto_generated                                                          ; mult_7dt            ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                        ;
-+---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 16           ; 64           ; 16           ; 1024 ; None ;
-+---------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |ULA|estadoAtual                                                              ;
++------------------------+--------------------+------------------------+------------------------+
+; Name                   ; estadoAtual.espera ; estadoAtual.saidaDados ; estadoAtual.executando ;
++------------------------+--------------------+------------------------+------------------------+
+; estadoAtual.espera     ; 0                  ; 0                      ; 0                      ;
+; estadoAtual.executando ; 1                  ; 0                      ; 1                      ;
+; estadoAtual.saidaDados ; 1                  ; 1                      ; 0                      ;
++------------------------+--------------------+------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |ULA|estadoFuturo                                                                 ;
++-------------------------+---------------------+-------------------------+-------------------------+
+; Name                    ; estadoFuturo.espera ; estadoFuturo.saidaDados ; estadoFuturo.executando ;
++-------------------------+---------------------+-------------------------+-------------------------+
+; estadoFuturo.espera     ; 0                   ; 0                       ; 0                       ;
+; estadoFuturo.executando ; 1                   ; 0                       ; 1                       ;
+; estadoFuturo.saidaDados ; 1                   ; 1                       ; 0                       ;
++-------------------------+---------------------+-------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |ULA|estadoIntermediario                        ;
++--------------------------------+--------------------------------+
+; Name                           ; estadoIntermediario.saidaDados ;
++--------------------------------+--------------------------------+
+; estadoIntermediario.espera     ; 0                              ;
+; estadoIntermediario.saidaDados ; 1                              ;
++--------------------------------+--------------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; estadoIntermediario~2                 ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -247,125 +312,125 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 40    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------+
-; Registers Packed Into Inferred Megafunctions ;
-+---------------+----------------+-------------+
-; Register Name ; Megafunction   ; Type        ;
-+---------------+----------------+-------------+
-; wo[0..15]     ; BancoReg_rtl_0 ; RAM         ;
-+---------------+----------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |ULA|Data[2]~reg0          ;
+; 16:1               ; 15 bits   ; 150 LEs       ; 30 LEs               ; 120 LEs                ; Yes        ; |ULA|Resultado[13]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Source assignments for altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated ;
-+---------------------------------+--------------------+------+-------------------+
-; Assignment                      ; Value              ; From ; To                ;
-+---------------------------------+--------------------+------+-------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                 ;
-+---------------------------------+--------------------+------+-------------------+
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Pilha ;
-+------------------+-------+--------------------------------------------+
-; Parameter Name   ; Value ; Type                                       ;
-+------------------+-------+--------------------------------------------+
-; Largura_da_pilha ; 16    ; Signed Integer                             ;
-; Tamanho_da_pilha ; 64    ; Signed Integer                             ;
-; Tamanho_endereco ; 6     ; Signed Integer                             ;
-+------------------+-------+--------------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ULA ;
++--------------------+-------+----------------------------------------+
+; Parameter Name     ; Value ; Type                                   ;
++--------------------+-------+----------------------------------------+
+; Tamanho_Da_Palavra ; 16    ; Signed Integer                         ;
+; soma               ; 0     ; Signed Integer                         ;
+; subtracao          ; 1     ; Signed Integer                         ;
+; multiplicacao      ; 2     ; Signed Integer                         ;
+; divisao            ; 3     ; Signed Integer                         ;
+; e                  ; 4     ; Signed Integer                         ;
+; ne                 ; 5     ; Signed Integer                         ;
+; ou                 ; 6     ; Signed Integer                         ;
+; Xou                ; 7     ; Signed Integer                         ;
+; cmp                ; 8     ; Signed Integer                         ;
+; nao                ; 9     ; Signed Integer                         ;
+; espera             ; 0     ; Signed Integer                         ;
+; executando         ; 1     ; Signed Integer                         ;
+; saidaDados         ; 2     ; Signed Integer                         ;
++--------------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: altsyncram:BancoReg_rtl_0 ;
-+------------------------------------+----------------------+----------------+
-; Parameter Name                     ; Value                ; Type           ;
-+------------------------------------+----------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped        ;
-; WIDTH_A                            ; 16                   ; Untyped        ;
-; WIDTHAD_A                          ; 6                    ; Untyped        ;
-; NUMWORDS_A                         ; 64                   ; Untyped        ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
-; WIDTH_B                            ; 16                   ; Untyped        ;
-; WIDTHAD_B                          ; 6                    ; Untyped        ;
-; NUMWORDS_B                         ; 64                   ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
-; BYTE_SIZE                          ; 8                    ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
-; INIT_FILE                          ; UNUSED               ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_kpd1      ; Untyped        ;
-+------------------------------------+----------------------+----------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16           ; Untyped             ;
+; LPM_WIDTHB                                     ; 16           ; Untyped             ;
+; LPM_WIDTHP                                     ; 32           ; Untyped             ;
+; LPM_WIDTHR                                     ; 32           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                      ;
-+-------------------------------------------+---------------------------+
-; Name                                      ; Value                     ;
-+-------------------------------------------+---------------------------+
-; Number of entity instances                ; 1                         ;
-; Entity Instance                           ; altsyncram:BancoReg_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                 ;
-;     -- WIDTH_A                            ; 16                        ;
-;     -- NUMWORDS_A                         ; 64                        ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED              ;
-;     -- WIDTH_B                            ; 16                        ;
-;     -- NUMWORDS_B                         ; 64                        ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                    ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED              ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                      ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                 ;
-+-------------------------------------------+---------------------------+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 16             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_lkm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16             ;
+;     -- LPM_WIDTHB                     ; 16             ;
+;     -- LPM_WIDTHP                     ; 32             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
 
 
 +-----------------------------------------------------+
@@ -373,15 +438,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 24                          ;
-; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 16                          ;
-;     normal            ; 16                          ;
-;         2 data inputs ; 16                          ;
-; cycloneiii_ram_block  ; 16                          ;
+; boundary_port         ; 56                          ;
+; cycloneiii_ff         ; 40                          ;
+;     ENA               ; 16                          ;
+;     ENA SCLR SLD      ; 15                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 397                         ;
+;     arith             ; 152                         ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 151                         ;
+;     normal            ; 245                         ;
+;         0 data inputs ; 16                          ;
+;         2 data inputs ; 48                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 152                         ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.46                        ;
+; Max LUT depth         ; 49.90                       ;
+; Average LUT depth     ; 32.86                       ;
 +-----------------------+-----------------------------+
 
 
@@ -390,7 +465,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -400,7 +475,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Thu Dec 14 11:58:42 2023
+    Info: Processing started: Fri Dec 15 18:13:30 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pilha -c Pilha
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -414,74 +489,50 @@ Info (12021): Found 1 design units, including 1 entities, in source file block1.
     Info (12023): Found entity 1: Block1
 Info (12021): Found 1 design units, including 1 entities, in source file temp.sv
     Info (12023): Found entity 1: temp File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 1
-Info (12127): Elaborating entity "Pilha" for the top level hierarchy
-Warning (276027): Inferred dual-clock RAM node "BancoReg_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "BancoReg_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 16
-        Info (286033): Parameter WIDTHAD_A set to 6
-        Info (286033): Parameter NUMWORDS_A set to 64
-        Info (286033): Parameter WIDTH_B set to 16
-        Info (286033): Parameter WIDTHAD_B set to 6
-        Info (286033): Parameter NUMWORDS_B set to 64
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "altsyncram:BancoReg_rtl_0"
-Info (12133): Instantiated megafunction "altsyncram:BancoReg_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "16"
-    Info (12134): Parameter "WIDTHAD_A" = "6"
-    Info (12134): Parameter "NUMWORDS_A" = "64"
-    Info (12134): Parameter "WIDTH_B" = "16"
-    Info (12134): Parameter "WIDTHAD_B" = "6"
-    Info (12134): Parameter "NUMWORDS_B" = "64"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kpd1.tdf
-    Info (12023): Found entity 1: altsyncram_kpd1 File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/altsyncram_kpd1.tdf Line: 28
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[0].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a0" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[1].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a1" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[2].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a2" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[3].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a3" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[4].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a4" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[5].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a5" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[6].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a6" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[7].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a7" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[8].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a8" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[9].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a9" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[10].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a10" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[11].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a11" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[12].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a12" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[13].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a13" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[14].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a14" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
-    Warning (13047): Converted the fan-out from the tri-state buffer "bf[15].ctrl_i" to the node "altsyncram:BancoReg_rtl_0|altsyncram_kpd1:auto_generated|ram_block1a15" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/Pilha.sv Line: 23
+Info (12127): Elaborating entity "ULA" for the top level hierarchy
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
+    Info (12023): Found entity 1: mult_7dt File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/mult_7dt.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lkm.tdf
+    Info (12023): Found entity 1: lpm_divide_lkm File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/lpm_divide_lkm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/sign_div_unsign_dnh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_03f.tdf
+    Info (12023): Found entity 1: alt_u_div_03f File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/alt_u_div_03f.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 0 output pins
-    Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 16 logic cells
-    Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Thu Dec 14 11:58:53 2023
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+Info (21057): Implemented 456 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 39 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 398 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Fri Dec 15 18:13:45 2023
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

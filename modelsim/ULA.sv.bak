@@ -15,8 +15,9 @@ divisao=3,
  executando=1,
  saidaDados=2
  ;
-output wire concluido;
-output wire [Tamanho_Da_Palavra-1:0] Data;
+ 
+output reg concluido;
+output reg [Tamanho_Da_Palavra-1:0] Data;
 input wire [Tamanho_Da_Palavra-1:0] ETp1; //entrada para temp1 
 input wire [Tamanho_Da_Palavra-1:0] ETp2; //entrada para temp2 
 input wire [3:0]op; //entrada da operação para a ula
@@ -26,10 +27,8 @@ input wire reset;
 
 reg [Tamanho_Da_Palavra-1:0]Resultado;
 reg [1:0] estadoAtual,estadoFuturo,estadoIntermediario;
-reg executa;
+
 always @ ( posedge clk)
-begin
-if (executa)
 begin
 	case (op)
 		soma: 	  begin
@@ -73,11 +72,9 @@ begin
 					estadoIntermediario<=saidaDados;
 		     end  
 		default:	  begin
-					//executa<=0;
-					estadoIntermediario<=executando;
+					estadoIntermediario<=espera;
 			  end
-	endcase
-end	
+	endcase	
 end
 always @ ( posedge clk)
 begin
@@ -90,20 +87,18 @@ begin
 					else
 					begin
 						estadoFuturo<=espera;
-						concluido<=0;
+						concluido<=1'b0;
 						Data<=0;
-						executa<=1'b0;
 					end
 				 end
 	 executando: begin
-						executa<=1'b1;
+
 						estadoFuturo<=estadoIntermediario;
 				   end
 	saidaDados: begin
 						Data<=Resultado;
 						concluido<=1'b1;
 						estadoFuturo<=espera;
-						executa<=1'b0;
 					end
 	endcase					
 end

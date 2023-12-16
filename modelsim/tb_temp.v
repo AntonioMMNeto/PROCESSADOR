@@ -1,4 +1,4 @@
-`timescale 10ns/10ns
+`timescale 10ns/1ns
 module tb_temp;
 parameter Tamanho_Da_Palavra=16;
 reg [Tamanho_Da_Palavra-1:0] Data_in_tb;
