@@ -1,0 +1,17 @@
+
+State Machine - |ULA|estadoAtual
+Name estadoAtual.espera estadoAtual.saidaDados estadoAtual.executando 
+estadoAtual.espera 0 0 0 
+estadoAtual.executando 1 0 1 
+estadoAtual.saidaDados 1 1 0 
+
+State Machine - |ULA|estadoFuturo
+Name estadoFuturo.espera estadoFuturo.saidaDados estadoFuturo.executando 
+estadoFuturo.espera 0 0 0 
+estadoFuturo.executando 1 0 1 
+estadoFuturo.saidaDados 1 1 0 
+
+State Machine - |ULA|estadoIntermediario
+Name estadoIntermediario.saidaDados 
+estadoIntermediario.espera 0 
+estadoIntermediario.saidaDados 1 
