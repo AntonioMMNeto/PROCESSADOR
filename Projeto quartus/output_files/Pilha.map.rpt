@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pilha
-Fri Dec 15 18:13:45 2023
+Sat Dec 16 11:44:18 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -13,21 +13,13 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |ULA|estadoAtual
- 10. State Machine - |ULA|estadoFuturo
- 11. State Machine - |ULA|estadoIntermediario
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |ULA
- 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 18. lpm_mult Parameter Settings by Entity Instance
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
- 22. Analysis & Synthesis Suppressed Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |temp
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,19 +46,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 15 18:13:45 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 16 11:44:18 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Pilha                                          ;
-; Top-level Entity Name              ; ULA                                            ;
+; Top-level Entity Name              ; temp                                           ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 397                                            ;
-;     Total combinational functions  ; 397                                            ;
-;     Dedicated logic registers      ; 40                                             ;
-; Total registers                    ; 40                                             ;
-; Total pins                         ; 56                                             ;
+; Total logic elements               ; 32                                             ;
+;     Total combinational functions  ; 32                                             ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 33                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 2                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
@@ -77,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F23C7      ;                    ;
-; Top-level entity name                                            ; ULA                ; Pilha              ;
+; Top-level entity name                                            ; temp               ; Pilha              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -174,137 +166,113 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; ULA.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv                     ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf                           ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                         ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/multcore.inc                           ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc                           ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altshift.inc                           ;         ;
-; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/mult_7dt.tdf            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                         ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                        ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                    ;         ;
-; db/lpm_divide_lkm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/lpm_divide_lkm.tdf      ;         ;
-; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/sign_div_unsign_dnh.tdf ;         ;
-; db/alt_u_div_03f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/alt_u_div_03f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
+; temp.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 397       ;
-;                                             ;           ;
-; Total combinational functions               ; 397       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 152       ;
-;     -- 3 input functions                    ; 180       ;
-;     -- <=2 input functions                  ; 65        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 245       ;
-;     -- arithmetic mode                      ; 152       ;
-;                                             ;           ;
-; Total registers                             ; 40        ;
-;     -- Dedicated logic registers            ; 40        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 56        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 2         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 40        ;
-; Total fan-out                               ; 1508      ;
-; Average fan-out                             ; 2.74      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 32       ;
+;                                             ;          ;
+; Total combinational functions               ; 32       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 32       ;
+;     -- <=2 input functions                  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 32       ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 33       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; io~input ;
+; Maximum fan-out                             ; 48       ;
+; Total fan-out                               ; 193      ;
+; Average fan-out                             ; 1.69     ;
++---------------------------------------------+----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name         ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |ULA                                   ; 397 (101)           ; 40 (40)                   ; 0           ; 2            ; 0       ; 1         ; 56   ; 0            ; |ULA                                                                                                 ; ULA                 ; work         ;
-;    |lpm_divide:Div0|                   ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_lkm:auto_generated|  ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                   ; lpm_divide_lkm      ; work         ;
-;          |sign_div_unsign_dnh:divider| ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
-;             |alt_u_div_03f:divider|    ; 296 (296)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_03f:divider ; alt_u_div_03f       ; work         ;
-;    |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |ULA|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
-;       |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |ULA|lpm_mult:Mult0|mult_7dt:auto_generated                                                          ; mult_7dt            ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |temp                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |temp               ; temp        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary        ;
-+---------------------------------------+-------------+
-; Statistic                             ; Number Used ;
-+---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 1           ;
-; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 2           ;
-; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 1           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
-; Variable Sign Embedded Multipliers    ; 0           ;
-; Dedicated Input Shift Register Chains ; 0           ;
-+---------------------------------------+-------------+
-Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |ULA|estadoAtual                                                              ;
-+------------------------+--------------------+------------------------+------------------------+
-; Name                   ; estadoAtual.espera ; estadoAtual.saidaDados ; estadoAtual.executando ;
-+------------------------+--------------------+------------------------+------------------------+
-; estadoAtual.espera     ; 0                  ; 0                      ; 0                      ;
-; estadoAtual.executando ; 1                  ; 0                      ; 1                      ;
-; estadoAtual.saidaDados ; 1                  ; 1                      ; 0                      ;
-+------------------------+--------------------+------------------------+------------------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------+
-; State Machine - |ULA|estadoFuturo                                                                 ;
-+-------------------------+---------------------+-------------------------+-------------------------+
-; Name                    ; estadoFuturo.espera ; estadoFuturo.saidaDados ; estadoFuturo.executando ;
-+-------------------------+---------------------+-------------------------+-------------------------+
-; estadoFuturo.espera     ; 0                   ; 0                       ; 0                       ;
-; estadoFuturo.executando ; 1                   ; 0                       ; 1                       ;
-; estadoFuturo.saidaDados ; 1                   ; 1                       ; 0                       ;
-+-------------------------+---------------------+-------------------------+-------------------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------+
-; State Machine - |ULA|estadoIntermediario                        ;
-+--------------------------------+--------------------------------+
-; Name                           ; estadoIntermediario.saidaDados ;
-+--------------------------------+--------------------------------+
-; estadoIntermediario.espera     ; 0                              ;
-; estadoIntermediario.saidaDados ; 1                              ;
-+--------------------------------+--------------------------------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; estadoIntermediario~2                 ; Lost fanout        ;
-; Total Number of Removed Registers = 1 ;                    ;
-+---------------------------------------+--------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; saidaUla[0]$latch                                   ; io                  ; yes                    ;
+; saidaUla[1]$latch                                   ; io                  ; yes                    ;
+; saidaUla[2]$latch                                   ; io                  ; yes                    ;
+; saidaUla[3]$latch                                   ; io                  ; yes                    ;
+; saidaUla[4]$latch                                   ; io                  ; yes                    ;
+; saidaUla[5]$latch                                   ; io                  ; yes                    ;
+; saidaUla[6]$latch                                   ; io                  ; yes                    ;
+; saidaUla[7]$latch                                   ; io                  ; yes                    ;
+; saidaUla[8]$latch                                   ; io                  ; yes                    ;
+; saidaUla[9]$latch                                   ; io                  ; yes                    ;
+; saidaUla[10]$latch                                  ; io                  ; yes                    ;
+; saidaUla[11]$latch                                  ; io                  ; yes                    ;
+; saidaUla[12]$latch                                  ; io                  ; yes                    ;
+; saidaUla[13]$latch                                  ; io                  ; yes                    ;
+; saidaUla[14]$latch                                  ; io                  ; yes                    ;
+; saidaUla[15]$latch                                  ; io                  ; yes                    ;
+; wo[0]                                               ; io                  ; yes                    ;
+; wo[1]                                               ; io                  ; yes                    ;
+; wo[2]                                               ; io                  ; yes                    ;
+; wo[3]                                               ; io                  ; yes                    ;
+; wo[4]                                               ; io                  ; yes                    ;
+; wo[5]                                               ; io                  ; yes                    ;
+; wo[6]                                               ; io                  ; yes                    ;
+; wo[7]                                               ; io                  ; yes                    ;
+; wo[8]                                               ; io                  ; yes                    ;
+; wo[9]                                               ; io                  ; yes                    ;
+; wo[10]                                              ; io                  ; yes                    ;
+; wo[11]                                              ; io                  ; yes                    ;
+; wo[12]                                              ; io                  ; yes                    ;
+; wo[13]                                              ; io                  ; yes                    ;
+; wo[14]                                              ; io                  ; yes                    ;
+; wo[15]                                              ; io                  ; yes                    ;
+; tmp[0]                                              ; io                  ; yes                    ;
+; tmp[1]                                              ; io                  ; yes                    ;
+; tmp[2]                                              ; io                  ; yes                    ;
+; tmp[3]                                              ; io                  ; yes                    ;
+; tmp[4]                                              ; io                  ; yes                    ;
+; tmp[5]                                              ; io                  ; yes                    ;
+; tmp[6]                                              ; io                  ; yes                    ;
+; tmp[7]                                              ; io                  ; yes                    ;
+; tmp[8]                                              ; io                  ; yes                    ;
+; tmp[9]                                              ; io                  ; yes                    ;
+; tmp[10]                                             ; io                  ; yes                    ;
+; tmp[11]                                             ; io                  ; yes                    ;
+; tmp[12]                                             ; io                  ; yes                    ;
+; tmp[13]                                             ; io                  ; yes                    ;
+; tmp[14]                                             ; io                  ; yes                    ;
+; tmp[15]                                             ; io                  ; yes                    ;
+; Number of user-specified and inferred latches = 48  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -312,125 +280,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 40    ;
-; Number of registers using Synchronous Clear  ; 15    ;
-; Number of registers using Synchronous Load   ; 15    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |ULA|Data[2]~reg0          ;
-; 16:1               ; 15 bits   ; 150 LEs       ; 30 LEs               ; 120 LEs                ; Yes        ; |ULA|Resultado[13]         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ULA ;
-+--------------------+-------+----------------------------------------+
-; Parameter Name     ; Value ; Type                                   ;
-+--------------------+-------+----------------------------------------+
-; Tamanho_Da_Palavra ; 16    ; Signed Integer                         ;
-; soma               ; 0     ; Signed Integer                         ;
-; subtracao          ; 1     ; Signed Integer                         ;
-; multiplicacao      ; 2     ; Signed Integer                         ;
-; divisao            ; 3     ; Signed Integer                         ;
-; e                  ; 4     ; Signed Integer                         ;
-; ne                 ; 5     ; Signed Integer                         ;
-; ou                 ; 6     ; Signed Integer                         ;
-; Xou                ; 7     ; Signed Integer                         ;
-; cmp                ; 8     ; Signed Integer                         ;
-; nao                ; 9     ; Signed Integer                         ;
-; espera             ; 0     ; Signed Integer                         ;
-; executando         ; 1     ; Signed Integer                         ;
-; saidaDados         ; 2     ; Signed Integer                         ;
-+--------------------+-------+----------------------------------------+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |temp ;
++--------------------+-------+-----------------------------------------+
+; Parameter Name     ; Value ; Type                                    ;
++--------------------+-------+-----------------------------------------+
+; Tamanho_Da_Palavra ; 16    ; Signed Integer                          ;
++--------------------+-------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
-+------------------------------------------------+--------------+---------------------+
-; Parameter Name                                 ; Value        ; Type                ;
-+------------------------------------------------+--------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 16           ; Untyped             ;
-; LPM_WIDTHB                                     ; 16           ; Untyped             ;
-; LPM_WIDTHP                                     ; 32           ; Untyped             ;
-; LPM_WIDTHR                                     ; 32           ; Untyped             ;
-; LPM_WIDTHS                                     ; 1            ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
-; LPM_PIPELINE                                   ; 0            ; Untyped             ;
-; LATENCY                                        ; 0            ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
-; USE_EAB                                        ; OFF          ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
-+------------------------------------------------+--------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 16             ; Untyped                ;
-; LPM_WIDTHD             ; 16             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_lkm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance         ;
-+---------------------------------------+----------------+
-; Name                                  ; Value          ;
-+---------------------------------------+----------------+
-; Number of entity instances            ; 1              ;
-; Entity Instance                       ; lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 16             ;
-;     -- LPM_WIDTHB                     ; 16             ;
-;     -- LPM_WIDTHP                     ; 32             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; NO             ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-+---------------------------------------+----------------+
 
 
 +-----------------------------------------------------+
@@ -438,25 +305,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 56                          ;
-; cycloneiii_ff         ; 40                          ;
-;     ENA               ; 16                          ;
-;     ENA SCLR SLD      ; 15                          ;
-;     plain             ; 9                           ;
-; cycloneiii_lcell_comb ; 397                         ;
-;     arith             ; 152                         ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 151                         ;
-;     normal            ; 245                         ;
-;         0 data inputs ; 16                          ;
-;         2 data inputs ; 48                          ;
-;         3 data inputs ; 29                          ;
-;         4 data inputs ; 152                         ;
-; cycloneiii_mac_mult   ; 1                           ;
-; cycloneiii_mac_out    ; 1                           ;
+; boundary_port         ; 33                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 32                          ;
+;     normal            ; 32                          ;
+;         3 data inputs ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 49.90                       ;
-; Average LUT depth     ; 32.86                       ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.84                        ;
 +-----------------------+-----------------------------+
 
 
@@ -465,7 +321,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -475,7 +331,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Fri Dec 15 18:13:30 2023
+    Info: Processing started: Sat Dec 16 11:44:05 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pilha -c Pilha
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -489,49 +345,108 @@ Info (12021): Found 1 design units, including 1 entities, in source file block1.
     Info (12023): Found entity 1: Block1
 Info (12021): Found 1 design units, including 1 entities, in source file temp.sv
     Info (12023): Found entity 1: temp File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 1
-Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 43
-    Info (12134): Parameter "LPM_WIDTHA" = "16"
-    Info (12134): Parameter "LPM_WIDTHB" = "16"
-    Info (12134): Parameter "LPM_WIDTHP" = "32"
-    Info (12134): Parameter "LPM_WIDTHR" = "32"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
-    Info (12023): Found entity 1: mult_7dt File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/mult_7dt.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/ULA.sv Line: 47
-    Info (12134): Parameter "LPM_WIDTHN" = "16"
-    Info (12134): Parameter "LPM_WIDTHD" = "16"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lkm.tdf
-    Info (12023): Found entity 1: lpm_divide_lkm File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/lpm_divide_lkm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dnh File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/sign_div_unsign_dnh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_03f.tdf
-    Info (12023): Found entity 1: alt_u_div_03f File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/db/alt_u_div_03f.tdf Line: 23
+Info (12127): Elaborating entity "temp" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at temp.sv(29): variable "wI" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 29
+Warning (10235): Verilog HDL Always Construct warning at temp.sv(30): variable "wI" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 30
+Warning (10235): Verilog HDL Always Construct warning at temp.sv(34): variable "tmp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "tmp", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "saidaUla", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Warning (10240): Verilog HDL Always Construct warning at temp.sv(25): inferring latch(es) for variable "wo", which holds its previous value in one or more paths through the always construct File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[0]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[1]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[2]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[3]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[4]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[5]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[6]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[7]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[8]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[9]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[10]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[11]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[12]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[13]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[14]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "saidaUla[15]" at temp.sv(25) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 25
+Info (10041): Inferred latch for "wo[0]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[1]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[2]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[3]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[4]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[5]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[6]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[7]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[8]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[9]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[10]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[11]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[12]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[13]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[14]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "wo[15]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[0]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[1]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[2]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[3]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[4]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[5]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[6]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[7]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[8]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[9]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[10]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[11]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[12]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[13]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[14]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Info (10041): Inferred latch for "tmp[15]" at temp.sv(34) File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[0].ctrl_i" to the node "saidaUla[0]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[1].ctrl_i" to the node "saidaUla[1]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[2].ctrl_i" to the node "saidaUla[2]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[3].ctrl_i" to the node "saidaUla[3]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[4].ctrl_i" to the node "saidaUla[4]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[5].ctrl_i" to the node "saidaUla[5]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[6].ctrl_i" to the node "saidaUla[6]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[7].ctrl_i" to the node "saidaUla[7]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[8].ctrl_i" to the node "saidaUla[8]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[9].ctrl_i" to the node "saidaUla[9]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[10].ctrl_i" to the node "saidaUla[10]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[11].ctrl_i" to the node "saidaUla[11]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[12].ctrl_i" to the node "saidaUla[12]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[13].ctrl_i" to the node "saidaUla[13]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[14].ctrl_i" to the node "saidaUla[14]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+    Warning (13047): Converted the fan-out from the tri-state buffer "bf[15].ctrl_i" to the node "saidaUla[15]$latch" into an OR gate File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 20
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "tmp[0]" merged with LATCH primitive "saidaUla[0]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[1]" merged with LATCH primitive "saidaUla[1]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[2]" merged with LATCH primitive "saidaUla[2]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[3]" merged with LATCH primitive "saidaUla[3]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[4]" merged with LATCH primitive "saidaUla[4]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[5]" merged with LATCH primitive "saidaUla[5]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[6]" merged with LATCH primitive "saidaUla[6]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[7]" merged with LATCH primitive "saidaUla[7]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[8]" merged with LATCH primitive "saidaUla[8]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[9]" merged with LATCH primitive "saidaUla[9]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[10]" merged with LATCH primitive "saidaUla[10]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[11]" merged with LATCH primitive "saidaUla[11]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[12]" merged with LATCH primitive "saidaUla[12]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[13]" merged with LATCH primitive "saidaUla[13]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[14]" merged with LATCH primitive "saidaUla[14]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
+    Info (13026): Duplicate LATCH primitive "tmp[15]" merged with LATCH primitive "saidaUla[15]$latch" File: C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/temp.sv Line: 34
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/anton/OneDrive/Documentos/GitHub/PROCESSADOR/Projeto quartus/output_files/Pilha.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 456 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 39 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 398 logic cells
-    Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4786 megabytes
-    Info: Processing ended: Fri Dec 15 18:13:45 2023
-    Info: Elapsed time: 00:00:15
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 32 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Sat Dec 16 11:44:18 2023
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:24
 
 

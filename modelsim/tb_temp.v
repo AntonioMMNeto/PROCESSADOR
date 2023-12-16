@@ -32,5 +32,6 @@ io_tb=1;
 $display("");
 $display("DADO DDISPONIVEL PARA LEITURA NA PORTA DATA %d",Data_out_tb);
 end
+$stop;
 end
 endmodule

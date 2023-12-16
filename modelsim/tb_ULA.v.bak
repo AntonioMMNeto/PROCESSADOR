@@ -35,7 +35,7 @@ reg [Tamanho_Da_Palavra-1:0] valor_data;
 
 initial
 begin
-$monitor("%d",ula_tb.estadoAtual);
+$monitor("Estado da Maquina de estado da ULA :%d",ula_tb.estadoAtual);
 	clk_tb=0;
 end
 ULA ula_tb(.concluido(concluido),.Data(Data_out_tb),.ETp1(ETp1_tb),.ETp2(ETp2_tb),.op(op_tb),.clk(clk_tb),.processar(processar_tb),.reset(reset_tb));
@@ -131,6 +131,409 @@ begin
 end
 endtask
 
+task divisao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=3;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb / valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de dovisap efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo divisao");
+	end
+	
+end
+endtask
+
+task e_v_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=1;
+	valor_de_test_2_tb=1;
+	op_tb=4;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	if(1 && valor_data)
+	begin
+		$display("Operação E efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo Operação E");
+	end
+	
+end
+endtask
+
+
+task e_f_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=1;
+	valor_de_test_2_tb=0;
+	op_tb=4;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	if(1 && !valor_data)
+	begin
+		$display("Operação E efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo Operação E");
+	end
+	
+end
+endtask
+
+task comparacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=8;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb == valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Operação de comparação efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo Operação de comparação");
+	end
+	
+end
+endtask
+
+/*
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+task multiplicacao_teste();
+begin
+	reset_tb=1;
+	#3
+	reset_tb=0;
+	#1
+	valor_de_test_1_tb=$random();
+	valor_de_test_2_tb=$random();
+	op_tb=2;
+	ETp1_tb=valor_de_test_1_tb;
+	ETp2_tb=valor_de_test_2_tb;
+	#10 processar_tb=1;
+
+	#10 processar_tb=0;
+	#10
+	valor_de_test_1_tb=valor_de_test_1_tb * valor_de_test_2_tb;
+	if(valor_de_test_1_tb==valor_data)
+	begin
+		$display("Valor de multiplicacao efetuardo corretamente");
+	end
+	else
+	begin
+		$display("Erro ao efetuardo multiplicacao");
+	end
+	
+end
+endtask
+
+*/
+
 
 always @(posedge concluido)
 begin
@@ -144,9 +547,13 @@ begin
 soma_teste();
 ssubtracao_teste();
 multiplicacao_teste();
-$display("%d",ula_tb.estadoAtual);
-#1000
-$display("%d",ula_tb.estadoAtual);
+divisao_teste();
+comparacao_teste();
+e_f_teste();
+e_v_teste();
+
+#10
+
 $stop;
 end
 

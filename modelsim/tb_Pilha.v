@@ -22,7 +22,7 @@ initial
 begin
 $monitor("CARREGANDO VALORES ALEATORIOS NA PILHA");
 $display("");
-for(y=0 ; y < (Tamanho_da_pilha-1) ; y=y+1)
+for(y=0 ; (y+1) < Tamanho_da_pilha ; y=y+1)
 begin
 	valor[y]=$random(10);
 	io_tb=1;
@@ -44,7 +44,7 @@ end
 
 always 
 begin
-
+wait(s);
 $monitor("CHECANDO SE A SAÍDA DA PILHA É IGUAL AOS VALORES DA ENTRADA");
 $display("");
 for(y=0 ; y <(Tamanho_da_pilha-1) ; y=y+1)
@@ -64,6 +64,7 @@ begin
 $monitor("Valor %d errado",y);
 end
 end
+$stop;
 end
 
 

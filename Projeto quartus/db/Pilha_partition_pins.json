@@ -4,7 +4,67 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "concluido",
+					"name" : "saidaUla[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[2]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[3]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[4]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[5]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[6]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[7]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[8]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[9]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[10]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[11]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[12]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[13]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[14]",
+					"strict" : false
+				},
+				{
+					"name" : "saidaUla[15]",
 					"strict" : false
 				},
 				{
@@ -72,159 +132,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "processar",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "op[1]",
-					"strict" : false
-				},
-				{
-					"name" : "op[3]",
-					"strict" : false
-				},
-				{
-					"name" : "op[2]",
-					"strict" : false
-				},
-				{
-					"name" : "op[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ETp1[0]",
+					"name" : "io",
 					"strict" : false
 				}
 			]
